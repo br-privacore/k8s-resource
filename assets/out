@@ -20,6 +20,8 @@ payload=$(mktemp /tmp/k8s-resource-request.XXXXXX)
 
 cat > $payload <&0
 
+cd $source_dir
+
 url=$(jq -r '.source.url // ""' < $payload)
 namespace=$(jq -r '.source.namespace // ""' < $payload)
 spec_path=$(jq -r '.params.spec_path // ""' < $payload)
