@@ -67,6 +67,9 @@ if [ -n "$ca_data" ]; then
   certificate_authority="--certificate-authority $ca_file"
 fi
 
+echo "server: $url"
+echo "namespace: $namespace"
+
 kubectl apply \
   --server "$url" \
   --namespace "$namespace" \
